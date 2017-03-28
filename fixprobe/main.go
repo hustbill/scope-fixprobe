@@ -3,6 +3,7 @@
 
  1. start scope without probe
  $ scope launch --mode app --probe.docker=true --no-probe --app.window 8760h
+
  2. Publish a fixed report.
  $ go run main.go -fixture /home/hzhang/git/scope/docker/demo.json
 
