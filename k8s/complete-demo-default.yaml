@@ -226,7 +226,7 @@ spec:
   ports:
   - port: 80
     targetPort: 8079
-    nodePort: 30001
+    nodePort: 30031
   selector:
     name: front-end
 ---
@@ -648,7 +648,7 @@ spec:
     # the port that this service should serve on
   - port: 9411
     targetPort: 9411
-    nodePort: 30002
+    nodePort: 30032
   selector:
     name: zipkin
 
