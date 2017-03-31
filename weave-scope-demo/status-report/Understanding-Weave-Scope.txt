@@ -1,0 +1,31 @@
+Understanding Weave Scope
+================================
+
+Weave Scope consists of two components: the app and the probe. The components are deployed as a single Docker container using the scope script. The probe is responsible for gathering information about the host on which it is running. This information is sent to the app in the form of a report. The app processes reports from the probe into usable topologies, serving the UI, as well as pushing these topologies to the UI.
+
++--Docker host----------+
+|  +--Container------+  |    .---------------.
+|  |                 |  |    | Browser       |
+|  |  +-----------+  |  |    |---------------|
+|  |  | scope-app |<---------|               |
+|  |  +-----------+  |  |    |               |
+|  |        ^        |  |    |               |
+|  |        |        |  |    '---------------'
+|  | +-------------+ |  |
+|  | | scope-probe | |  |
+|  | +-------------+ |  |
+|  |                 |  |
+|  +-----------------+  |
++-----------------------+
+
+
+Scope Example
+======================
+path: extras/example/README.md
+
+"architecture"
+client -> frontend --> app --> searchapp -> elasticsearch
+           (nginx)         |
+                           --> qotd -> internet
+                           |
+                           --> redis

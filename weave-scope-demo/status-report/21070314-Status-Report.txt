@@ -1,0 +1,27 @@
+21070314-Status-Report
+===========================
+
+* Done *
+
+1. Launch Weave Scope on Local machine and AWS
+2. Read source code of weaveworks/scope
+   - generate a map of application
+3. weave networks plugins :
+   - [HTTP Statistics](https://github.com/weaveworks-plugins/scope-http-statistics)
+   - [Traffic Control](https://github.com/weaveworks-plugins/scope-traffic-control)
+
+
+*  Ongoing *
+1. Read source code of weaveworks/scope
+   - render (pod.go and container.go)
+2. implement a demo fetch data from influxdb and render it web browser
+
+
+
+2017/03/27
+=================
+1. Use existing Json data to render Scope UI
+curl -X POST -H "Content-Type: application/json" http://192.168.0.113:4040/api/report -d @/home/hzhang/git/scope/docker/demo.json
+2. Scope UI :  client/  (/home/hzhang/git/scope/client/package.json)
+3. connect to time series database - InfluxDB via RESTful API
+   Scope APP
