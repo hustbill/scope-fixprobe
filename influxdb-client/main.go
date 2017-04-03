@@ -20,10 +20,10 @@ import (
 
 )
 
-const db = "canal-monitoring"
+const db = "ican"
 
 var log = logrus.New()
-var command = "select * from ep_stats"
+var command = "select * from p2prxbyte"
 
 func main() {
 	log.Out = os.Stdout
