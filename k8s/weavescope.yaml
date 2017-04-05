@@ -73,16 +73,9 @@ items:
             "email-address": "support@weave.works"
           }
     spec:
-      type: NodePort
       ports:
       - port: 80 
         targetPort: 4040
-        nodePort: 30040
-      #ports:
-      #  - name: app
-      #    port: 80
-      #    targetPort: 4040
-      #    protocol: TCP
       selector:
         name: weave-scope-app
         app: weave-scope
