@@ -11,13 +11,9 @@ format, template
 scope/
 client/app/scripts/components/app.js
 client/app/scripts/actions/app-actions.js
-
 client/app/scripts/components/topologies.js
 client/app/scripts/components/nodes.js
-
-
 client/app/scripts/hoc/metric-feeder.js
-
 client/app/scripts/reducers/root.js  code蛮多 还没看完。
 
 http://192.168.0.113:4040/#!/state/{"controlPipe":null,"topologyViewMode":"grid",
@@ -35,6 +31,8 @@ a) start Scope --no-probe
 b) import JSON data via API using Curl command
 curl -X POST -H "Content-Type: application/json" http://192.168.0.113:4040/api/report -d @/home/hzhang/git/scope/docker/demo.json
 curl -X POST -H "Content-Type: application/json" http://192.168.255.97:4040/api/report -d @/home/hzhang/git/scope/docker/demo.json
+
+http://192.168.255.97:4040/
 
 or
 b2) Publish a fixed report.
@@ -65,3 +63,17 @@ influx -precision rfc3339
 > insert ep_stats,dstIP=178782216,protocol=1,srcIP=178782218,ip=10.168.0.10,name=isolation-1-wrmtn bytes=420906795008,packets=1
 curl -i XPOST 'http://localhost:8086/write?db=canal-monitoring' --data-binary @canal.txt
 curl -i XPOST 'http://localhost:8086/write?db=canal-monitoring' --data-binary @cpu_data.txt
+
+
+===============================
+Traffic controller plugin
+===============================
+latency:
+missing packets:
+
+
+===============================
+Network Bandwith plugin
+===============================
+Golang
+srcPod  dstPod Byes
