@@ -10,8 +10,8 @@ items:
           {
             "server-version": "master-4b19761",
             "original-request": {
-              "url": "/k8s/v1.6/scope.yaml?/launch/k8s/weavescope.yaml",
-              "date": "Fri Apr 07 2017 00:44:02 GMT+0000 (UTC)"
+              "url": "/k8s/v1.5/scope.yaml?/launch/k8s/weavescope.yaml",
+              "date": "Fri Apr 07 2017 00:56:52 GMT+0000 (UTC)"
             },
             "email-address": "support@weave.works"
           }
@@ -29,8 +29,8 @@ items:
           {
             "server-version": "master-4b19761",
             "original-request": {
-              "url": "/k8s/v1.6/scope.yaml?/launch/k8s/weavescope.yaml",
-              "date": "Fri Apr 07 2017 00:44:02 GMT+0000 (UTC)"
+              "url": "/k8s/v1.5/scope.yaml?/launch/k8s/weavescope.yaml",
+              "date": "Fri Apr 07 2017 00:56:52 GMT+0000 (UTC)"
             },
             "email-address": "support@weave.works"
           }
@@ -53,7 +53,7 @@ items:
                 - containerPort: 4040
                   protocol: TCP
       replicas: 1
-    apiVersion: apps/v1beta1
+    apiVersion: extensions/v1beta1
     kind: Deployment
   - metadata:
       labels:
@@ -67,8 +67,8 @@ items:
           {
             "server-version": "master-4b19761",
             "original-request": {
-              "url": "/k8s/v1.6/scope.yaml?/launch/k8s/weavescope.yaml",
-              "date": "Fri Apr 07 2017 00:44:02 GMT+0000 (UTC)"
+              "url": "/k8s/v1.5/scope.yaml?/launch/k8s/weavescope.yaml",
+              "date": "Fri Apr 07 2017 00:56:52 GMT+0000 (UTC)"
             },
             "email-address": "support@weave.works"
           }
@@ -97,8 +97,8 @@ items:
           {
             "server-version": "master-4b19761",
             "original-request": {
-              "url": "/k8s/v1.6/scope.yaml?/launch/k8s/weavescope.yaml",
-              "date": "Fri Apr 07 2017 00:44:02 GMT+0000 (UTC)"
+              "url": "/k8s/v1.5/scope.yaml?/launch/k8s/weavescope.yaml",
+              "date": "Fri Apr 07 2017 00:56:52 GMT+0000 (UTC)"
             },
             "email-address": "support@weave.works"
           }
@@ -110,10 +110,10 @@ items:
             app: weave-scope
             weave-cloud-component: scope
             weave-scope-component: agent
+          annotations:
+            scheduler.alpha.kubernetes.io/tolerations: >-
+              [{"key":"dedicated","operator":"Equal","value":"master","effect":"NoSchedule"}]
         spec:
-          tolerations:
-            - key: node-role.kubernetes.io/master
-              effect: NoSchedule
           containers:
             - name: agent
               image: 'weaveworks/scope:1.3.0'
